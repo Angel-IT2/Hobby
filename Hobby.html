@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening to music</title>
+    <style>
+        body{
+            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+        }
+        h1{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        img{
+            max-width: 100%;
+        }
+        p{
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        button{
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #2772db;
+            background: white;
+            font-size: 20px;
+            border-radius: 6px;
+            padding: 10px 15px;
+            transition: all 150ms ease-in-out;
+        }
+        button:hover{
+            cursor: pointer;
+            background: #2772db;
+        }
+        .theme-button{
+            background: #2772db;
+            color: white;
+            font-size: 16px;
+            padding: 15px 20px;
+            border-radius: 50px;
+        }
+        .theme-button:hover{
+            background: white;
+            color: #2772db;
+        }
+        .music{
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow:  0px 30px 50px rgba(57, 48, 90, 0.1);
+        }
+        .music-button
+        {
+            border-radius: 50px;
+            width: 70%;
+            background-color: #2772db;
+        }
+        .music-button:hover
+        {
+            color: #2772db;
+            background-color: white;
+        }
+        .picture{
+            border-radius: 9px;
+            transition: all 150ms ease-in-out;
+        }
+
+        .picture:hover{
+            filter: contrast(80%);
+            transform: scale(1.1);
+        }
+        p{
+            font-size: 19px;
+            line-height: 1.9;
+        }
+        .grid{
+            margin: 16px 0;
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .grid img{
+            width: 100%;
+            border-radius: 7px;
+            transition: all 150ms ease-in-out;
+        }
+        .grid img:hover{
+            transform: scale(2);
+        }
+        .dark{
+            background: #a2a8d3;
+            color: white;
+        }
+        .dark .music{
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .dark a{
+            color: #2772db;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-button">
+        Change Theme
+    </button>
+    <div class="music">
+        <h1>
+            Listening to Music
+        </h1>
+        <h2>
+            My Favourite hobby
+        </h2>
+        <a href="https://www.hopkinsmedicine.org/health/wellness-and-prevention/keep-your-brain-young-with-music" target="_blank">
+           <img class="picture" src="https://neurosciencenews.com/files/2023/10/music-emotion-neuroscience.jpg" alt="">
+        </a>
+        <div class="grid">
+            <img src="https://www.womenfitness.net/wp/wp-content/uploads/2023/09/Music-Nw16.jpg" alt="">
+            <img src="https://as1.ftcdn.net/v2/jpg/01/33/22/88/1000_F_133228856_GOJEcVkvP8aiJbTNCKIzhrVZcbbARUFX.jpg" alt="">
+            <img src="https://img.freepik.com/free-photo/close-up-portrait-happy-smiling-romantic-tender-african-american-woman-enjoying-listening-music-headphones-tilt-head-close-eyes-dreamy-grinning-delighted-blue-wall_1258-35460.jpg" alt="">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/026/274/583/small_2x/generative-ai-illustration-of-smiling-woman-listening-to-music-positive-and-joyful-solid-color-neon-background-photo.jpg" alt="">
+        </div>
+        <div class="description">
+            <p>
+                Research has shown that listening to music can reduce anxiety, blood pressure, and pain as well as improve sleep quality, mood, mental alertness, and memory.
+                <br>
+                <br>
+                <a href="https://en.wikipedia.org/wiki/Music"> <strong> 📖 Read From Wikipedia</strong></a>
+            </p>
+        </div>
+        <div>
+            <button id="music-button" class="music-button">
+                Listen to music 🎶
+            </button>
+            <p>
+                <small>
+                    Coded with 💖 by <a href="https://www.linkedin.com/in/vutshila-angel-maluleke-09a85b26a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4QEAFN0%2BS3KLPonGvqUybA%3D%3D" target="_blank"> Angel Maluleke</a>
+                </small>
+            </p>
+        </div>
+        <script>
+            function musicType()
+            {
+                let type = prompt("What type of music genre do you listen to?");
+                let name = prompt("What is your name?");
+                let email = prompt("What is your email address?");
+                alert("Thanks " + name + "! We'll send you our best playlist to relax your mind ");
+            }
+
+            function theme()
+            {
+                if(theme === "light")
+                {
+                    theme = "dark";
+                    document.querySelector("body").classList.add("dark");
+       
+                }else
+                {
+                    theme = "light";
+                    document.querySelector("body").classList.remove("dark");
+       
+                }
+            }
+
+            let themeState = "dark";
+            let themeButton = document.querySelector(".theme-button");
+            themeButton.addEventListener("click", theme);
+
+            let musicButton = document.querySelector("#music-button");
+            musicButton.addEventListener("click", musicType);
+        </script>
+    </div>
+</body>
+</html>
